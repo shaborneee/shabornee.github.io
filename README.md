@@ -1,11 +1,15 @@
 # shabornee.github.io
-=======
 
 This repo contains my personal website.  
 It is a clone of [varadbhogayata.github.io](https://github.com/varadbhogayata/varadbhogayata.github.io).  
 
-# Personal Portfolio ⚡️ 
-> A clean, beautiful, responsive portfolio template for Software Developers!
+# Activity 1 ⚡️ 
+- Created public repository and cloned and updated source code and READ.me file 
+![Activity 1 Screenshot](assets/img/assignment-screenshots/github-repo-screenshot.jpg)
+
+# Activity 2 ⚡️ 
+- Updated template with my personal information 
+<!-- > A clean, beautiful, responsive portfolio template for Software Developers!
 
 > https://varadbhogayata.github.io
 
@@ -75,4 +79,4 @@ To view a live example, **[click here](https://varadbhogayata.github.io/)**
 - 🔃 Create a new pull request.
 
 ## License 📄
-This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details. -->
