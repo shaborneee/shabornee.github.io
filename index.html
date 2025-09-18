@@ -373,7 +373,7 @@
         },
         {
           title: "Portfolio Website",
-          img: "/assets/img/personal-project-icon.jpg",
+          img: "/assets/img/personal-project-icon.png",
           header: "Personal portfolio built with HTML, CSS, and JavaScript",
           tools: "HTML, CSS, JavaScript",
           description: [
@@ -425,8 +425,8 @@
       function renderProjects() {
         const container = document.getElementById("recent-projects");
 
-        for (let i = 0; i < projectsPerLoad; i++) {
-          if (projectsShown >= projects.length) {
+        for (let i = 0; i < projectsShownAtATime; i++) {
+          if (projectsShown > projects.length) {
             document.getElementById("load-more").style.display = "none";
             break;
           }
