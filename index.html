@@ -426,7 +426,7 @@
         const container = document.getElementById("recent-projects");
 
         for (let i = 0; i < projectsShownAtATime; i++) {
-          if (projectsShown > projects.length) {
+          if (projectsShown >= projects.length) {
             document.getElementById("load-more").style.display = "none";
             break;
           }
