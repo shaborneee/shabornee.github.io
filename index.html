@@ -349,24 +349,38 @@
     
     <!-- Script to dynamically load and loop through the projects -->
     <script>
-      const projects = [
+       const projects = [
         {
           title: "GIS Map Application",
-          image: "/assets/img/project-gis.png",
-          description: "Geographical Information System (GIS) Software For Courier Delivery Service",
-          tools: "C++, EXGL, GTK, Git"
+          img: "/assets/img/project-gis.png",
+          header: "Geographical Information System (GIS) Software For Courier Delivery Service",
+          tools: "C++, EXGL, GTK, Git",
+          description: [
+            "Interactive map with panning, zooming, dynamic search, and optimized courier delivery routes.",
+            "Designed appealing, informative, and custom maps for applications such as tourism, real estate, and urban planning",
+            "Highlighting the fastest routes with multiple stops in between."
+          ]
         },
         {
           title: "Maze Game Web-App",
-          image: "/assets/img/project-thin-ice.jpg",
-          description: "Thin Ice Maze Game with multiple levels and scoring",
-          tools: "C, Assembly, CPUlator, DE1-SoC Board"
+          img: "/assets/img/project-thin-ice.jpg",
+          header: "Thin Ice Maze Game with multiple levels and scoring",
+          tools: "C, Assembly, CPUlator, DE1-SoC Board",
+          description: [
+            "Developed a customized version of the 'Thin Ice' game to navigate mazes and collect special objects",
+            "Multiple levels and a timer and scoreboard."
+          ]
         },
         {
           title: "Portfolio Website",
-          image: "/assets/img/personal-project-icon.jpg",
-          description: "Personal portfolio built with HTML, CSS, and JavaScript",
-          tools: "HTML, CSS, JavaScript"
+          img: "/assets/img/personal-project-icon.jpg",
+          header: "Personal portfolio built with HTML, CSS, and JavaScript",
+          tools: "HTML, CSS, JavaScript",
+          description: [
+            "Personal portfolio website to showcase projects, work experience, education, and skills",
+            "Responsive design using custom CSS on top of pre-built website framework",
+            "Interactive features such as dynamic project loading, smooth scrolling, and typing animation"
+          ]
         }
       ];
 
@@ -375,55 +389,57 @@
 
       function createProjectCard(project) {
         const card = document.createElement("div");
-        card.className = "col s12 m8 l6"; // make the card a bigger size so it takes up the screen 
+        card.className = "col s12 m4 l4";
+        card.style.marginBottom = "20px"; 
+
+        let descriptionHTML = "";
+        project.description.forEach(item => {
+          descriptionHTML += `<li>${item}</li>`;
+        });
 
         card.innerHTML = `
-          <div class="card large">
+          <div class="card medium">
             <div class="card-image waves-effect waves-block waves-light">
-              <img alt="${project.title}" src="${project.image}" style="height:100%; width:100%" class="activator"/>
+              <img alt="${project.title}" src="${project.img}" style="height: 100%; width: 100%" class="activator" />
             </div>
             <div class="card-content">
-              <span class="card-title activator blue-text hoverline">
-                ${project.title} <i class="mdi-navigation-more-vert right blue-text"></i>
-              </span>
-              <p>${project.description}</p>
+              <span class="card-title activator blue-text hoverline">${project.title}<i 
+                class="mdi-navigation-more-vert right blue-text"></i></span>
+              <p>
+                ${project.header}
+              </p>
             </div>
             <div class="card-reveal">
-              <span class="card-title grey-text"><small>Accomplishments</small>
-                <i class="mdi-navigation-close right blue-text"></i>
-              </span>
+              <span class="card-title grey-text"><small>Accomplishments</small><i 
+                class="mdi-navigation-close right blue-text"></i></span>
               <ul>
                 <li><b>Tools:</b> ${project.tools}</li>
+                ${descriptionHTML}
               </ul>
             </div>
           </div>
         `;
-
         return card;
       }
 
-      function render() {
-        const projectsContainer = document.getElementById("recent-projects");
+      function renderProjects() {
+        const container = document.getElementById("recent-projects");
 
-        for (let i = 0; i < projectsShownAtATime; i++) {
+        for (let i = 0; i < projectsPerLoad; i++) {
           if (projectsShown >= projects.length) {
             document.getElementById("load-more").style.display = "none";
             break;
           }
 
           const projectCard = createProjectCard(projects[projectsShown]);
-          projectsContainer.appendChild(projectCard);
-
+          container.appendChild(projectCard);
           projectsShown++;
         }
       }
 
-      document.addEventListener("DOMContentLoaded", function() {
-        render(); 
-
-        document.getElementById("load-more").addEventListener("click", function() {
-          render();
-        });
+      document.addEventListener("DOMContentLoaded", () => {
+        renderProjects();
+        document.getElementById("load-more").addEventListener("click", renderProjects);
       });
     </script>
 
