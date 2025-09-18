@@ -103,7 +103,7 @@
 .contactme {
   position: relative;
   padding: 11px 35px;
-  background: none;
+  background: #606971;
   color: #EBF1F7;
   border: 2px solid #606971;
   font-weight: 600;
@@ -117,7 +117,7 @@
 
 .contactme:hover{
   color: #131517;
-  background-color: #EBF1F7;
+  background-color: #606971;
 }
 /* main body */
 
@@ -222,6 +222,7 @@ dt {
 
 ul.side-nav {
   width: 190px;
+  background-color: #DBE3EA;
 }
 
 ul.side-nav li {
@@ -258,7 +259,7 @@ ul.table-of-contents li.logo a.active, ul.table-of-contents li.logo a:hover {
 } */
 
 ul.side-nav.fixed li.logo {
-  background-color: #f5f5dc;;
+  background-color: #698094;;
   border-bottom: 1px solid #ddd;
   box-sizing: content-box;
   min-height: 90px;
@@ -357,7 +358,7 @@ h3 {
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: #DBE3EA;
   height: 100%;
   left: 0;
   position: absolute;
@@ -549,9 +550,9 @@ small {
 
 /* main .teal-text */
 
-.teal-text {
+/* .teal-text {
   color: #008073 !important;
-}
+} */
 
 /* .teal-text {
   color: #0b5e86 !important;
@@ -559,10 +560,21 @@ small {
 
 /* .teal */
 
-.teal {
-  background-color: #008073 !important;
+.blue-background {
+  background-color: #DBE3EA !important;
 }
 
+.blue-header {
+  background-color: #698094 !important;
+}
+
+.blue-header-text {
+  color: #EBF1F7 !important
+}
+
+.blue-text {
+  color: #698094 !important;
+}
 /* .teal {
   background-color: #00695c !important;
 } */
